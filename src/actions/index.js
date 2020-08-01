@@ -1,3 +1,4 @@
+import history from "../history";
 import {
   SIGN_IN,
   SIGN_OUT,
@@ -23,6 +24,7 @@ export const createStream = (formValues) => {
     const response = await streams.post("/streams", { ...formValues, userId });
 
     dispatch({ type: CREATE_STREAM, payload: response.data });
+    history.push("/");
   };
 };
 
