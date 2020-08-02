@@ -44,11 +44,12 @@ export const fetchStream = (id) => {
   };
 };
 
-export const editStream = (id) => {
+export const editStream = (id, formValues) => {
   return async (dispatch) => {
-    const response = await streams.put(`/streams/${id}`);
+    const response = await streams.patch(`/streams/${id}`, formValues);
 
     dispatch({ type: EDIT_STREAM, payload: response.data });
+    history.push("/");
   };
 };
 
