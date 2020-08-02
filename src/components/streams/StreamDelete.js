@@ -5,7 +5,12 @@ const StreamDelete = () => {
   const actions = () => {
     return (
       <>
-        <button className="ui button primary ">Cancel</button>
+        <button
+          onClick={() => history.push("/")}
+          className="ui button primary "
+        >
+          Cancel
+        </button>
         <button className="ui button negative">Delete</button>
       </>
     );
